@@ -1,3 +1,3 @@
 # Python-
 
-This is a repo of my practice work in Python. 
+This is a repo of my practice work in Python.  it includes questions in Python. 
