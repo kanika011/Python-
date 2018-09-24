@@ -1,0 +1,42 @@
+class Stack:
+    def __init__(self):
+        self.items=[]
+    def push(self, item):
+        self.items.append(item)
+    def pop(self):
+        return self.items.pop()
+    def peek(self):
+        return self.items[len(self.items)-1]
+    def isEmpty(self):
+        return self.items == []
+    
+        
+
+def removeDup(arr):
+    s=Stack()
+    s1=Stack()
+    top = 0
+    for i in range(0, len(arr), 1):
+        s.push(arr[i])
+    top=s.pop()
+    s1.push(top)
+    while (not s.isEmpty()):
+       top = s.pop()
+       top1=s1.pop()
+       if top != top1:
+        	s1.push(top1)
+        	s1.push(top)
+        	#print "top "+top
+        	#print "top1 "+top1
+       else:
+       	print "Equal "+top+" top1 "+top1
+       if s1.isEmpty():
+       	top = s.pop()
+       	s1.push(top)
+       #print s.peek()
+    for i in range (0,len(arr),1):
+    	top = s1.pop()
+    	print top
+
+
+removeDup('mississippi')
